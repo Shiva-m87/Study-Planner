@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Study Planner</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <h2>Study Planner</h2>
+            <button onclick="showSection('dashboard')">Dashboard</button>
+            <button onclick="showSection('subjects')">Subjects</button>
+            <button onclick="showSection('tasks')">Tasks</button>
+            <button onclick="showSection('schedule')">Schedule</button>
+            <button onclick="showSection('analytics')">Analytics</button>
+            <button onclick="showSection('settings')">Settings</button>
+        </div>
+        <main class="main">
+            <section id="dashboard" class="section active">
+                <h1>Dashboard</h1>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Total Subjects</h3>
+                        <p id="totalSubjects">0</p>
+                    </div>
+                    <div class="card">
+                        <h3>Pending Tasks</h3>
+                        <p id="pendingTasks">0</p>
+                    </div>
+                    <div class="card">
+                        <h3>Completion %</h3>
+                        <p id="completionRate">0%</p>
+                    </div>
+                </div>
+                <h3>Upcoming Deadlines</h3>
+                <div id="upcomingDeadlines"></div>
+            </section>
+            <section id="subjects" class="section">
+                <h1>Subjects</h1>
+                <input id="subjectName" placeholder="Subject name" />
+                <select id="subjectPriority">
+                    <option>High</option>
+                    <option>Medium</option>
+                    <option>Low</option>
+                </select>
+                <button onclick="addSubject()">Add Subject</button>
+                <div id="subjectList"></div>
+            </section>
+            <section id="tasks" class="section">
+                <h1>Tasks</h1>
+                <input id="taskTitle" placeholder="Task title" />
+                <input type="date" id="taskDeadline" />
+                <select id="taskSubject"></select>
+                <button onclick="addTask()">Add Task</button>
+                <hr />
+                <h3>Filter & Search</h3>
+                <select id="filterStatus" onchange="renderTasks()">
+                    <option value="all">All</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <input type="text" id="searchTask" placeholder="Search task..." oninput="renderTasks()" />
+
+                <div id="taskList"></div>
+            </section>
+            <section id="schedule" class="section">
+                <h1>Schedule</h1>
+                <select id="scheduleDay">
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
+                </select>
+                <input type="time" id="startTime" />
+                <input type="time" id="endTime" />
+                <select id="scheduleSubject"></select>
+                <button onclick="addSchedule()">Add Slot</button>
+                <h3>Weekly Schedule</h3>
+                <div id="weeklySchedule"></div>
+            </section>
+            <section id="analytics" class="section">
+                <h1>Progress Analytics</h1>
+                <h3>Overall Completion</h3>
+                <div class="progress-bar-container">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+                <p id="analyticsText"></p>
+                <h3>Subject Performance</h3>
+                <div id="subjectAnalytics"></div>
+                <h3>Study Hours This Week</h3>
+                <p id="weeklyHours"></p>
+                <h3>Overdue Tasks</h3>
+                <p id="overdueCount"></p>
+                <h3>Most Productive Subject</h3>
+                <p id="bestSubject"></p>
+                <h3>Productivity Score</h3>
+                <p id="productivityScore"></p>
+            </section>
+
+            <section id="settings" class="section">
+                <h1>Settings</h1>
+                <button onclick="toggleTheme()">Toggle Dark Mode</button>
+                <button onclick="exportData()">Export Data</button>
+                <button onclick="resetData()">Reset Data</button>
+            </section>
+        </main>
+    </div>
+    <div id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
