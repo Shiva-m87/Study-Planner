@@ -9,6 +9,7 @@ A modern, feature-rich study planner web application with a sleek dark UI design
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
  
+LIVE Link:https://study-planner-ruddy.vercel.app/
 
 ## ✨ Features
 
@@ -210,13 +211,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Built with vanilla JavaScript for maximum performance
 - Designed with student productivity in mind
 
-## 📧 Contact
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
-
-Project Link: [https://github.com/yourusername/smart-study-planner](https://github.com/yourusername/smart-study-planner)
-
----
 
 ⭐ If you find this project helpful, please give it a star!
 
